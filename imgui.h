@@ -1,4 +1,4 @@
-// dear imgui, v1.89.6
+// dear imgui, v1.89.7 WIP
 // (headers)
 
 // Help:
@@ -22,8 +22,8 @@
 
 // Library Version
 // (Integer encoded as XYYZZ for use in #if preprocessor conditionals, e.g. '#if IMGUI_VERSION_NUM >= 12345')
-#define IMGUI_VERSION       "1.89.6"
-#define IMGUI_VERSION_NUM   18960
+#define IMGUI_VERSION       "1.89.7 WIP"
+#define IMGUI_VERSION_NUM   18962
 #define IMGUI_HAS_TABLE
 #define IMGUI_HAS_VIEWPORT          // Viewport WIP branch
 #define IMGUI_HAS_DOCK              // Docking WIP branch
@@ -2048,6 +2048,8 @@ struct ImGuiIO
     // - backends may have other side-effects on focus loss, so this will reduce side-effects but not necessary remove all of them.
     // - consider using e.g. Win32's IsDebuggerPresent() as an additional filter (or see ImOsIsDebuggerPresent() in imgui_test_engine/imgui_te_utils.cpp for a Unix compatible version).
     bool        ConfigDebugIgnoreFocusLoss;     // = false          // Ignore io.AddFocusEvent(false), consequently not calling io.ClearInputKeys() in input processing.
+    // - tools to audit ini data
+    bool        ConfigDebugIniSettings;         // = false          // Save .ini data with extra comments (particularly helpful for Docking, but makes saving slower)
 
     //------------------------------------------------------------------
     // Platform Functions
